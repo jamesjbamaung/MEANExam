@@ -1,0 +1,25 @@
+<div id="component">
+  <h1>Browse the Ledger</h1>
+  <h2>Here you can browse all Pets.</h2>
+  <table id="ledger">
+      <thead>
+      <tr id="grey">
+          <th>Pet List</th>
+      </tr>
+      <tr>
+          <th>Name</th>
+          <th>Type</th>
+      </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let pet of pets">
+              <td>{{pet.name}}</td>
+              <td>{{pet.type}}</td>
+              <td>
+                  <button [routerLink]="['/edit', pet._id]">Edit</button>
+                  <button [routerLink]="['/details', pet._id]">Details</button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>

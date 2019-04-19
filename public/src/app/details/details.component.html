@@ -1,0 +1,32 @@
+<h2>Pet Details</h2>
+<table id="ledger">
+  <thead>
+  <tr id="grey">
+      <th>Pet List</th>
+  </tr>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Skills</th>
+      <th>Likes</th>
+      <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>{{thisPet.pet.name}}</td>
+          <td>{{thisPet.pet.type}}</td>
+          <td>{{thisPet.pet.description}}</td>
+          <th>{{thisPet.pet.skillOne}} <br>{{thisPet.pet.skillTwo}} <br>{{thisPet.pet.skillThree}}</th>
+          <th>{{thisPet.pet.likes}} {{numberOfLikes}}</th>
+          <td>
+              <button [routerLink]="['/edit', thisPet.pet._id]">Edit</button>
+              <button class="deleteButton" (click)="destroy(thisPet.pet._id)">DELETE</button>
+              <div *ngIf="likeButton">
+                <button (click)="addLike()">Like</button>
+              </div>
+          </td>
+      </tr>
+  </tbody>
+</table>

@@ -1,0 +1,24 @@
+<div id="component">
+  <h1>Add a Pet</h1>
+  <form (submit)="addPet()">
+    {{newAuthor | json}} 
+    <h3>Name:</h3>
+    <input type="text" [(ngModel)]="newPet.name" name="newPet.name"><br>
+    <h3>Type:</h3>
+    <input type="text" name="newPet.type" [(ngModel)]="newPet.type"><br>
+    <h3>Description:</h3>
+    <input type="text" name="newPet.description" [(ngModel)]="newPet.description"><br>
+    <h3>Skill:</h3>
+    <input type="text" name="newPet.skillOne" [(ngModel)]="newPet.skillOne"><br>
+    <h3>Skill:</h3>
+    <input type="text" name="newPet.skillTwo" [(ngModel)]="newPet.skillTwo"><br>
+    <h3>Skill:</h3>
+    <input type="text" name="newPet.skillThree" [(ngModel)]="newPet.skillThree"><br>
+    <input class="btn" type="submit" value="Submit">
+  </form>
+
+  <div *ngIf="error">this is our error: {{error.message}}</div>
+  <ul *ngIf="error">
+    <li *ngFor="let err of error">{{err}}</li>
+  </ul>
+</div>

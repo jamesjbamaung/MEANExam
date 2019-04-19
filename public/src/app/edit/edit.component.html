@@ -1,0 +1,22 @@
+<div id="component">
+  <a [routerLink]="['/home']"><h2>Home</h2></a>
+  <h2>Edit this Pet:</h2>
+  <form (submit)="editSubmit()">
+    <h3>Name:</h3>
+    <input type="text" name="pet.name" [(ngModel)]="pet.name" [value]="pet.pet.name"><br>
+    <h3>Type:</h3>
+    <input type="text" name="pet.type" [(ngModel)]="pet.type" [value]="pet.pet.type"><br>
+    <h3>Description:</h3>
+    <input type="text" name="pet.description" [(ngModel)]="pet.description" [value]="pet.pet.description"><br>
+    <h3>Skill:</h3>
+    <input type="text" name="pet.skillOne" [(ngModel)]="pet.skillOne" [value]="pet.pet.skillOne"><br>
+    <h3>Skill:</h3>
+    <input type="text" name="pet.skillTwo" [(ngModel)]="pet.skillTwo" [value]="pet.pet.skillTwo"><br>
+    <h3>Skill:</h3>
+    <input type="text" name="pet.skillThree" [(ngModel)]="pet.skillThree" [value]="pet.pet.skillThree"><br>
+    <br>
+    <button class="btn btn-primary" [routerLink]="['/home']">Cancel</button>
+    <input class="btn btn-success" type="submit" value="Edit">
+  </form>
+  <div *ngIf="error">this is our error: {{error.message}}</div>
+</div>
